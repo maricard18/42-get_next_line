@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:12:39 by maricard          #+#    #+#             */
-/*   Updated: 2022/12/02 13:06:54 by maricard         ###   ########.fr       */
+/*   Updated: 2022/12/04 08:58:25 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ char	*ft_buf(int fd, char *stash)
 	return (stash);
 }
 
-char	*ft_get_line(stash)
+char	*ft_get_line(char *stash)
 {
 	int		i;
 	int		a;
 	char	*line;
 
-	if (!stash)
+	if (!*stash)
 		return (0);
 	i = 0;
 	while (stash[i])
@@ -60,8 +60,40 @@ char	*ft_get_line(stash)
 	}
 	a = 0;
 	while (a < i)
-		line[a++] = stash[a++];
+	{
+		line[a] = stash[a];
+		a++;
+	}
 	return (line);
+}
+
+char	*ft_remove_line(char *stash)
+{
+	char	*new_stash;
+	int		i;
+	int		a;
+	int		diff;
+
+	i = 0;
+	a = 0;
+	diff = ft_strlen(stash);
+	while (stash[i] && stash[i] != '\n')
+		i++;
+	if (stash[i] == '\n')
+		i++;
+	if (diff == 0)
+		return (0);
+	else
+	{
+		new_stash = malloc((diff + 1) * sizeof(char));
+		if (!new_stash)
+			return (0);
+		while (stash[i])
+			new_stash[a] = stash[i];
+		new_stash[i] = '\0';
+	}
+	free(stash);
+	return (new_stash);
 }
 
 char	*get_next_line(int fd)
@@ -80,9 +112,9 @@ char	*get_next_line(int fd)
 	if (!stash)
 		return (0);
 	line = ft_get_line(stash);
+	stash = ft_remove_line(stash);
 	return (line);
 }
-
 
 int	main(void)
 {
@@ -91,6 +123,5 @@ int	main(void)
 	ola = open("teste", O_RDONLY);
 	printf("'%s'", get_next_line(ola));
 	printf("'%s'", get_next_line(ola));
-	return(0);
+	return (0);
 }
-
