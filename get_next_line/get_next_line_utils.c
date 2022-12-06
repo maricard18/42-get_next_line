@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 10:43:04 by maricard          #+#    #+#             */
-/*   Updated: 2022/12/02 13:14:50 by maricard         ###   ########.fr       */
+/*   Updated: 2022/12/06 14:48:07 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strchr(char *buf, char c)
 	int	i;
 
 	i = 0;
+	if (!buf)
+		return (0);
 	while (buf[i])
 	{
 		if (buf[i] == c)
@@ -61,5 +63,6 @@ char	*ft_strjoin(char *str1, char *str2)
 		str[a++] = str2[i++];
 	}
 	str[a] = '\0';
+	free(str1);
 	return (str);
 }
