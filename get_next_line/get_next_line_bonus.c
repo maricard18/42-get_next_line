@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:57:45 by maricard          #+#    #+#             */
-/*   Updated: 2022/12/06 17:39:20 by maricard         ###   ########.fr       */
+/*   Updated: 2022/12/07 09:27:05 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char	*get_next_line(int fd)
 	static char	*stash[4096];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 | fd > 4096)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 4096)
 		return (0);
 	stash[fd] = ft_buf(fd, stash[fd]);
 	if (!stash[fd])
