@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:57:45 by maricard          #+#    #+#             */
-/*   Updated: 2022/12/07 09:27:05 by maricard         ###   ########.fr       */
+/*   Updated: 2022/12/10 10:39:27 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char	*ft_get_line(char *stash)
 	return (line);
 }
 
-char	*ft_buf(int fd, char *stash)
+char	*ft_read_line(int fd, char *stash)
 {
 	char	*buf;
 	int		bytes_read;
@@ -105,7 +105,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 4096)
 		return (0);
-	stash[fd] = ft_buf(fd, stash[fd]);
+	stash[fd] = ft_read_line(fd, stash[fd]);
 	if (!stash[fd])
 		return (0);
 	line = ft_get_line(stash[fd]);

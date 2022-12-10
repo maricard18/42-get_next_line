@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:59:52 by maricard          #+#    #+#             */
-/*   Updated: 2022/12/06 17:29:30 by maricard         ###   ########.fr       */
+/*   Updated: 2022/12/10 10:38:23 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 //Function Prototypes
 char	*get_next_line(int fd);
-char	*ft_buf(int fd, char *stash);
+char	*ft_read_line(int fd, char *stash);
 char	*ft_get_line(char *stash);
 char	*ft_remove_line(char *stash);
 

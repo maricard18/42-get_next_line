@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:13:49 by maricard          #+#    #+#             */
-/*   Updated: 2022/12/06 11:56:16 by maricard         ###   ########.fr       */
+/*   Updated: 2022/12/10 10:36:14 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 //Function Prototypes
 char	*get_next_line(int fd);
-char	*ft_buf(int fd, char *stash);
+char	*ft_read_line(int fd, char *stash);
 char	*ft_get_line(char *stash);
 char	*ft_remove_line(char *stash);
 
