@@ -4,7 +4,7 @@
 
 This project is about coding a funtion that returns a line. <br>
 It's a very useful tool in future projects that require reading some form of input line by line. <br>
-This project is in rank 1 of 42 common core and was graded with the score of 125.<br>
+This project is in rank 1 of 42 common core and was graded with the score of 125/100.<br>
 -> [Subject here](https://github.com/maricard18/42-get_next_line/blob/main/extras/en.subject.pdf)
 
 
